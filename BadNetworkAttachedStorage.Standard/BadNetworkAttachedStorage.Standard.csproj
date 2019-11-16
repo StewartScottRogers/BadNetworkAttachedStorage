@@ -1,9 +1,15 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <RootNamespace>System.IO</RootNamespace>
+    <PackageProjectUrl>https://github.com/StewartScottRogers</PackageProjectUrl>
+    <RepositoryType>Git</RepositoryType>
+    <RepositoryUrl>https://github.com/StewartScottRogers/BadNetworkAttachedStorage.git</RepositoryUrl>
+    <Description>Bad Network Attached Storage an answer to unreliable Network file access.</Description>
+    <Copyright>None</Copyright>
+    <PackageTags>DirectoryInfo, FileInfo, System.IO, NAS</PackageTags>
   </PropertyGroup>
 
   <Import Project="..\BadNetworkAttachedStorage.Shared\BadNetworkAttachedStorage.Shared.projitems" Label="Shared" />

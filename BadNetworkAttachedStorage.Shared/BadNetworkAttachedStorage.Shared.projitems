@@ -11,6 +11,6 @@
   <ItemGroup>
     <Compile Include="$(MSBuildThisFileDirectory)BadNasDirectoryInfo.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)BadNasFileInfo.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Library\RetryIOActions.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Library\RetryIO.cs" />
   </ItemGroup>
 </Project>

@@ -1,17 +1,17 @@
 ﻿using System.Threading.Tasks;
 
 namespace System.IO.Library {
-    internal static class RetryIOActions {
+    internal static class RetryIO {
         #region Constants
 
         private static readonly TimeSpan[] RetryIntervals = new TimeSpan[] {
                                                                                     TimeSpan.FromMilliseconds(1 * 1000),
                                                                                     TimeSpan.FromMilliseconds(3 * 1000),
-                                                                                    TimeSpan.FromMilliseconds(3 * 1000),
-                                                                                    TimeSpan.FromMilliseconds(3 * 1000),
-                                                                                    TimeSpan.FromMilliseconds(3 * 1000),
-                                                                                    TimeSpan.FromMilliseconds(3 * 1000),
-                                                                                    TimeSpan.FromMilliseconds(3 * 1000),
+                                                                                    TimeSpan.FromMilliseconds(5 * 1000),
+                                                                                    TimeSpan.FromMilliseconds(7 * 1000),
+                                                                                    TimeSpan.FromMilliseconds(11 * 1000),
+                                                                                    TimeSpan.FromMilliseconds(13 * 1000),
+                                                                                    TimeSpan.FromMilliseconds(17 * 1000),
                                                                             };
         #endregion
 
