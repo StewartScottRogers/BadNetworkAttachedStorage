@@ -10,10 +10,6 @@ EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BadNetworkAttachedStorage.UnitTests", "BadNetworkAttachedStorage.UnitTests\BadNetworkAttachedStorage.UnitTests.csproj", "{05A85924-1837-4088-A40F-DA454E504A49}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{514B9853-9AB6-44BD-B6B9-9A9B436B48FA}"
-	ProjectSection(SolutionItems) = preProject
-		NuGet.ReadMe.txt = NuGet.ReadMe.txt
-		NuGetPublish.ps1 = NuGetPublish.ps1
-	EndProjectSection
 EndProject
 Global
 	GlobalSection(SharedMSBuildProjectFiles) = preSolution
