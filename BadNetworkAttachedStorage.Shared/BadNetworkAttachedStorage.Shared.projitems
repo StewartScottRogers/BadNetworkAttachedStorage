@@ -6,10 +6,11 @@
     <SharedGUID>584a2452-d1b5-4c9b-9dcd-9315bbb0b776</SharedGUID>
   </PropertyGroup>
   <PropertyGroup Label="Configuration">
-    <Import_RootNamespace>BadNetworkAttachedStorage.Shared</Import_RootNamespace>
+    <Import_RootNamespace>System.IO</Import_RootNamespace>
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="$(MSBuildThisFileDirectory)BadNasDirectoryInfo.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)BadNasFileInfo.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Library\RetryIOActions.cs" />
   </ItemGroup>
 </Project>
