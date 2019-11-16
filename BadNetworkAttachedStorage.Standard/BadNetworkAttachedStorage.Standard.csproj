@@ -1,4 +1,4 @@
-﻿<Project Sdk="Microsoft.NET.Sdk">
+<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
@@ -10,8 +10,19 @@
     <Description>Bad Network Attached Storage an answer to unreliable Network file access.</Description>
     <Copyright>None</Copyright>
     <PackageTags>DirectoryInfo, FileInfo, System.IO, NAS</PackageTags>
+    <SignAssembly>true</SignAssembly>
+    <AssemblyOriginatorKeyFile>KeyFileP!.key.pfx</AssemblyOriginatorKeyFile>
+    <AssemblyVersion>1.0.1.0</AssemblyVersion>
+    <FileVersion>1.0.1.0</FileVersion>
+    <Version>1.0.1</Version>
   </PropertyGroup>
 
   <Import Project="..\BadNetworkAttachedStorage.Shared\BadNetworkAttachedStorage.Shared.projitems" Label="Shared" />
+
+  <ItemGroup>
+    <None Update="NuGetPublish.ps1">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
 
 </Project>
