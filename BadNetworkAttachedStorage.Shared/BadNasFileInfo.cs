@@ -78,5 +78,7 @@ namespace System.IO {
               RetryIO.Retry(() => {
                   return File.ReadLines(FileInfo.FullName, encoding).ToArray();
               });
+
+        public override String ToString() => FileInfo.FullName;
     }
 }

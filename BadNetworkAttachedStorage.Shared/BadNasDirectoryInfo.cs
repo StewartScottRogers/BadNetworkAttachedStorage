@@ -108,5 +108,7 @@ namespace System.IO {
                     return DirectoryInfo.FullName;
                 });
         }
+
+        public override String ToString() => DirectoryInfo.FullName;
     }
 }
