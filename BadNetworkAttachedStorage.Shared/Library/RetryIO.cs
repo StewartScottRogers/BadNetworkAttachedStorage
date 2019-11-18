@@ -5,13 +5,16 @@ namespace System.IO.Library {
         #region Constants
 
         private static readonly TimeSpan[] RetryIntervals = new TimeSpan[] {
-                                                                                    TimeSpan.FromMilliseconds(1 * 1000),
-                                                                                    TimeSpan.FromMilliseconds(3 * 1000),
-                                                                                    TimeSpan.FromMilliseconds(5 * 1000),
-                                                                                    TimeSpan.FromMilliseconds(7 * 1000),
-                                                                                    TimeSpan.FromMilliseconds(11 * 1000),
-                                                                                    TimeSpan.FromMilliseconds(13 * 1000),
-                                                                                    TimeSpan.FromMilliseconds(17 * 1000),
+                                                                                    TimeSpan.FromMilliseconds(1),
+                                                                                    TimeSpan.FromMilliseconds(1 * 10),
+                                                                                    TimeSpan.FromMilliseconds(5 * 10),
+                                                                                    TimeSpan.FromMilliseconds(1 * 100),
+                                                                                    TimeSpan.FromMilliseconds(3 * 100),
+                                                                                    TimeSpan.FromMilliseconds(5 * 100),
+                                                                                    TimeSpan.FromMilliseconds(7 * 100),
+                                                                                    TimeSpan.FromMilliseconds(11 * 100),
+                                                                                    TimeSpan.FromMilliseconds(13 * 100),
+                                                                                    TimeSpan.FromMilliseconds(17 * 100),
                                                                             };
         #endregion
 

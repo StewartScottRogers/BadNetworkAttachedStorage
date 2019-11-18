@@ -8,14 +8,6 @@ namespace System.IO {
 
         public BadNasFileInfo(FileInfo fileInfo) => FileInfo = fileInfo;
 
-        public Boolean IsReadOnly {
-            get =>
-                RetryIO.Retry(() => {
-                    FileInfo.Refresh();
-                    return FileInfo.IsReadOnly;
-                });
-        }
-
         public void Create() =>
           RetryIO.Retry(() => {
               FileInfo.Refresh();
@@ -25,8 +17,7 @@ namespace System.IO {
 
         public Boolean Exists() =>
             RetryIO.Retry(() => {
-                FileInfo.Refresh();
-                return FileInfo.Exists;
+                return File.Exists(FileInfo.FullName);
             });
 
         public String Name {
@@ -48,25 +39,21 @@ namespace System.IO {
 
         public void AppendAllText(String contents) =>
             RetryIO.Retry(() => {
-                FileInfo.Refresh();
                 File.AppendAllText(FileInfo.FullName, contents);
             });
 
         public void AppendAllText(String contents, Encoding encoding) =>
             RetryIO.Retry(() => {
-                FileInfo.Refresh();
                 File.AppendAllText(FileInfo.FullName, contents, encoding);
             });
 
         public void WriteAllText(String contents) =>
            RetryIO.Retry(() => {
-               FileInfo.Refresh();
                File.WriteAllText(FileInfo.FullName, contents);
            });
 
         public void WriteAllText(String contents, Encoding encoding) =>
             RetryIO.Retry(() => {
-                FileInfo.Refresh();
                 File.WriteAllText(FileInfo.FullName, contents, encoding);
             });
 
@@ -74,25 +61,21 @@ namespace System.IO {
 
         public String ReadAllText() =>
               RetryIO.Retry(() => {
-                  FileInfo.Refresh();
                   return File.ReadAllText(FileInfo.FullName);
               });
 
         public String ReadAllText(Encoding encoding) =>
               RetryIO.Retry(() => {
-                  FileInfo.Refresh();
                   return File.ReadAllText(FileInfo.FullName, encoding);
               });
 
         public String[] ReadLines() =>
               RetryIO.Retry(() => {
-                  FileInfo.Refresh();
                   return File.ReadLines(FileInfo.FullName).ToArray();
               });
 
         public String[] ReadLines(Encoding encoding) =>
               RetryIO.Retry(() => {
-                  FileInfo.Refresh();
                   return File.ReadLines(FileInfo.FullName, encoding).ToArray();
               });
     }
