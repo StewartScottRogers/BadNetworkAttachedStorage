@@ -15,69 +15,31 @@ namespace System.IO {
                   FileInfo.Create();
           });
 
-        public Boolean Exists() =>
-            RetryIO.Retry(() => {
-                return File.Exists(FileInfo.FullName);
-            });
+        public Boolean Exists() => RetryIO.Retry(() => { return File.Exists(FileInfo.FullName); });
 
-        public String Name {
-            get =>
-                RetryIO.Retry(() => {
-                    FileInfo.Refresh();
-                    return FileInfo.Name;
-                });
-        }
+        public String Name { get => RetryIO.Retry(() => { FileInfo.Refresh(); return FileInfo.Name; }); }
 
-        public String FullName {
-            get =>
-                RetryIO.Retry(() => {
-                    FileInfo.Refresh();
-                    return FileInfo.FullName;
-                });
-        }
+        public String FullName { get => RetryIO.Retry(() => { FileInfo.Refresh(); return FileInfo.FullName; }); }
 
 
-        public void AppendAllText(String contents) =>
-            RetryIO.Retry(() => {
-                File.AppendAllText(FileInfo.FullName, contents);
-            });
+        public void AppendAllText(String contents) => RetryIO.Retry(() => { File.AppendAllText(FileInfo.FullName, contents); });
 
-        public void AppendAllText(String contents, Encoding encoding) =>
-            RetryIO.Retry(() => {
-                File.AppendAllText(FileInfo.FullName, contents, encoding);
-            });
+        public void AppendAllText(String contents, Encoding encoding) => RetryIO.Retry(() => { File.AppendAllText(FileInfo.FullName, contents, encoding); });
 
-        public void WriteAllText(String contents) =>
-           RetryIO.Retry(() => {
-               File.WriteAllText(FileInfo.FullName, contents);
-           });
+        public void WriteAllText(String contents) => RetryIO.Retry(() => { File.WriteAllText(FileInfo.FullName, contents); });
 
-        public void WriteAllText(String contents, Encoding encoding) =>
-            RetryIO.Retry(() => {
-                File.WriteAllText(FileInfo.FullName, contents, encoding);
-            });
+        public void WriteAllText(String contents, Encoding encoding) => RetryIO.Retry(() => { File.WriteAllText(FileInfo.FullName, contents, encoding); });
 
 
 
-        public String ReadAllText() =>
-              RetryIO.Retry(() => {
-                  return File.ReadAllText(FileInfo.FullName);
-              });
+        public String ReadAllText() => RetryIO.Retry(() => { return File.ReadAllText(FileInfo.FullName); });
 
-        public String ReadAllText(Encoding encoding) =>
-              RetryIO.Retry(() => {
-                  return File.ReadAllText(FileInfo.FullName, encoding);
-              });
+        public String ReadAllText(Encoding encoding) => RetryIO.Retry(() => { return File.ReadAllText(FileInfo.FullName, encoding); });
 
-        public String[] ReadLines() =>
-              RetryIO.Retry(() => {
-                  return File.ReadLines(FileInfo.FullName).ToArray();
-              });
+        public String[] ReadLines() => RetryIO.Retry(() => { return File.ReadLines(FileInfo.FullName).ToArray(); });
 
-        public String[] ReadLines(Encoding encoding) =>
-              RetryIO.Retry(() => {
-                  return File.ReadLines(FileInfo.FullName, encoding).ToArray();
-              });
+        public String[] ReadLines(Encoding encoding) => RetryIO.Retry(() => { return File.ReadLines(FileInfo.FullName, encoding).ToArray(); });
+
 
         public override String ToString() => FileInfo.FullName;
     }

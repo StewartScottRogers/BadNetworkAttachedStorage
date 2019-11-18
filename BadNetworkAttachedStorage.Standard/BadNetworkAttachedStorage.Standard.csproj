@@ -8,13 +8,16 @@
     <RepositoryType>Git</RepositoryType>
     <RepositoryUrl>https://github.com/StewartScottRogers/BadNetworkAttachedStorage.git</RepositoryUrl>
     <Description>Bad Network Attached Storage an answer to unreliable Network file access.</Description>
-    <Copyright>None</Copyright>
+    <Copyright></Copyright>
     <PackageTags>DirectoryInfo, FileInfo, System.IO, NAS</PackageTags>
     <SignAssembly>true</SignAssembly>
     <AssemblyOriginatorKeyFile>KeyFileP!.key.pfx</AssemblyOriginatorKeyFile>
-    <AssemblyVersion>1.0.3.0</AssemblyVersion>
-    <FileVersion>1.0.3.0</FileVersion>
-    <Version>1.0.3</Version>
+    <AssemblyVersion>1.0.4.0</AssemblyVersion>
+    <FileVersion>1.0.4.0</FileVersion>
+    <Version>1.0.4</Version>
+    <Authors>https://www.linkedin.com/in/stewartscottrogers/</Authors>
+    <Company>S Rogers Consulting, LLC</Company>
+    <Product>Bad Network Attached Storage</Product>
   </PropertyGroup>
 
   <Import Project="..\BadNetworkAttachedStorage.Shared\BadNetworkAttachedStorage.Shared.projitems" Label="Shared" />

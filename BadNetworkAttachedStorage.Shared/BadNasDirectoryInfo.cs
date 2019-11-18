@@ -6,20 +6,27 @@ namespace System.IO {
         private readonly DirectoryInfo DirectoryInfo;
         public BadNasDirectoryInfo(DirectoryInfo directoryInfo) => DirectoryInfo = directoryInfo;
 
-        public BadNasFileInfo CreateFile(String fileName) =>
-              RetryIO.Retry(() => {
-                  DirectoryInfo.Refresh();
-                  var badNasFileInfo = new BadNasFileInfo(new FileInfo(Path.Combine(DirectoryInfo.FullName, fileName)));
-                  badNasFileInfo.Create();
-                  return badNasFileInfo;
-              });
-
         public void Create() =>
-              RetryIO.Retry(() => {
-                  DirectoryInfo.Refresh();
-                  if (!DirectoryInfo.Exists)
-                      DirectoryInfo.Create();
-              });
+             RetryIO.Retry(() => {
+                 DirectoryInfo.Refresh();
+                 if (!DirectoryInfo.Exists)
+                     DirectoryInfo.Create();
+
+             });
+
+        public BadNasFileInfo CreateFile(String fileName) =>
+         RetryIO.Retry(() => {
+             DirectoryInfo.Refresh();
+             var badNasFileInfo = new BadNasFileInfo(new FileInfo(Path.Combine(DirectoryInfo.FullName, fileName)));
+             badNasFileInfo.Create();
+             return badNasFileInfo;
+         });
+
+        public Boolean Exists() => RetryIO.Retry(() => { return Directory.Exists(DirectoryInfo.FullName); });
+
+        public String Name { get => RetryIO.Retry(() => { DirectoryInfo.Refresh(); return DirectoryInfo.Name; }); }
+
+        public String FullName { get => RetryIO.Retry(() => { DirectoryInfo.Refresh(); return DirectoryInfo.FullName; }); }
 
         public BadNasDirectoryInfo CreateSubdirectory(String path) =>
             RetryIO.Retry(() => {
@@ -93,21 +100,7 @@ namespace System.IO {
                 DirectoryInfo.Delete(recursive);
             });
 
-        public String Name {
-            get =>
-                RetryIO.Retry(() => {
-                    DirectoryInfo.Refresh();
-                    return DirectoryInfo.Name;
-                });
-        }
-
-        public String FullName {
-            get =>
-                RetryIO.Retry(() => {
-                    DirectoryInfo.Refresh();
-                    return DirectoryInfo.FullName;
-                });
-        }
+     
 
         public override String ToString() => DirectoryInfo.FullName;
     }
